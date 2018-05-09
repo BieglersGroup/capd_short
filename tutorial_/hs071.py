@@ -6,6 +6,9 @@ from pyomo.environ import *
 
 __author__ = 'David Thierry'  #: May 2018
 
+#: Problem number 71 from the Hock-Schittkowsky test suite
+#: https://www.coin-or.org/Ipopt/documentation/node20.html
+
 #: The model
 model = ConcreteModel()
 
