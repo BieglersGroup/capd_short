@@ -3,7 +3,7 @@
 
 from __future__ import division
 from __future__ import print_function
-from gams_.power_generation import model
+from gams_.with_imports.power_generation import model
 from pyomo.opt import SolverFactory
 from pyomo.core.kernel.numvalue import value
 
