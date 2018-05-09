@@ -9,47 +9,18 @@ from pyomo.core.kernel.numvalue import value
 __author__ = 'David Thierry'  #: May 2017
 
 #: The model
-model = ConcreteModel()
+model = AbstractModel()
 #: The sets
-model.G = Set(initialize=['gen1', 'gen2'])
-model.F = Set(initialize=['oil', 'gas'])
-model.K = Set(initialize=[0, 1, 2])
+model.G = Set()
+model.F = Set()
+model.K = Set()
 
 #: Parameter
-#: Declared manually.
-A_init = dict()
-A_init[('gen1', 'oil', 0)] = 1.4609
-A_init[('gen1', 'oil', 1)] = 1.5742
-A_init[('gen1', 'oil', 2)] = 0.8008
-
-A_init[('gen1', 'gas', 0)] = 1.5742
-A_init[('gen1', 'gas', 1)] = 0.16310
-A_init[('gen1', 'gas', 2)] = 0.000916
-
-A_init[('gen2', 'oil', 0)] = 0.8008
-A_init[('gen2', 'oil', 1)] = 0.20310
-A_init[('gen2', 'oil', 2)] = 0.000916
-
-A_init[('gen2', 'gas', 0)] = 0.7266
-A_init[('gen2', 'gas', 1)] = 0.2256
-A_init[('gen2', 'gas', 2)] = 0.000778
-
-
-model.A = Param(model.G, model.F, model.K, initialize=A_init)
-
-PMAX_init = {}
-PMAX_init['gen1'] = 30.0
-PMAX_init['gen2'] = 25.0
-
-model.PMAX = Param(model.G, initialize=PMAX_init)
-
-PMIN_init = {}
-PMIN_init['gen1'] = 18.0
-PMIN_init['gen2'] = 14.0
-
-model.PMIN = Param(model.G, initialize=PMIN_init)
-model.GASSUP = Param(initialize=10.0)
-model.PREQ = Param(initialize=50.0, doc='Total power output required in MW')
+model.A = Param(model.G, model.F, model.K)
+model.PMAX = Param(model.G)
+model.PMIN = Param(model.G)
+model.GASSUP = Param()
+model.PREQ = Param(doc='Total power output required in MW')
 
 #: Variables
 model.P = Var(model.G, domain=PositiveReals, doc='Total power output of generators in MW')

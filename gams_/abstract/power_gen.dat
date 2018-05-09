@@ -1,0 +1,5 @@
+set G := gen1 gen2;
+set F := oil gas;
+set K := 0 1 2;
+
+param A :=
