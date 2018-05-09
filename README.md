@@ -13,7 +13,7 @@ This repository contains some of the python code used for Larry's short course.
 
 [Lorenz Biegler](http://numero.cheme.cmu.edu/)
 
-
+[Slides](https://cmu.box.com/shared/static/iw7kuch3iji28zfrn2yvqz08oz7xyxg0.pptx)
 
 ##
 David Thierry, Lorenz T . Biegler. Prepared for the CAPD short-course of May 2018
